@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="quickstart/index.html"><strong aria-hidden="true">2.</strong> Quickstart</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="quickstart/building.html"><strong aria-hidden="true">2.1.</strong> Building</a></li><li class="chapter-item expanded "><a href="quickstart/local.html"><strong aria-hidden="true">2.2.</strong> Using locally</a></li><li class="chapter-item expanded "><a href="quickstart/docker.html"><strong aria-hidden="true">2.3.</strong> Using with Docker</a></li><li class="chapter-item expanded "><a href="quickstart/kubernetes.html"><strong aria-hidden="true">2.4.</strong> Using on Kubernetes</a></li><li class="chapter-item expanded "><a href="quickstart/vagrant.html"><strong aria-hidden="true">2.5.</strong> Using on Vagrant</a></li></ol></li><li class="chapter-item expanded "><a href="tools/index.html"><strong aria-hidden="true">3.</strong> Using with other tools</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tools/suricata.html"><strong aria-hidden="true">3.1.</strong> Suricata</a></li></ol></li><li class="chapter-item expanded "><a href="configuration.html"><strong aria-hidden="true">4.</strong> Configuration</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="quickstart/index.html"><strong aria-hidden="true">2.</strong> Quickstart</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="quickstart/building.html"><strong aria-hidden="true">2.1.</strong> Building</a></li><li class="chapter-item expanded "><a href="quickstart/local.html"><strong aria-hidden="true">2.2.</strong> Using locally</a></li><li class="chapter-item expanded "><a href="quickstart/docker.html"><strong aria-hidden="true">2.3.</strong> Using with Docker</a></li><li class="chapter-item expanded "><a href="quickstart/kubernetes.html"><strong aria-hidden="true">2.4.</strong> Using on Kubernetes</a></li><li class="chapter-item expanded "><a href="quickstart/vagrant.html"><strong aria-hidden="true">2.5.</strong> Using on Vagrant</a></li></ol></li><li class="chapter-item expanded "><a href="plugins/index.html"><strong aria-hidden="true">3.</strong> Plugins</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="plugins/s3.html"><strong aria-hidden="true">3.1.</strong> S3</a></li></ol></li><li class="chapter-item expanded "><a href="tools/index.html"><strong aria-hidden="true">4.</strong> Using with other tools</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tools/suricata.html"><strong aria-hidden="true">4.1.</strong> Suricata</a></li></ol></li><li class="chapter-item expanded "><a href="configuration.html"><strong aria-hidden="true">5.</strong> Configuration</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -143,11 +143,11 @@
 
                 <div id="content" class="content">
                     <main>
-                        <p><a href="https://deepfence.github.io/PacketStreamer/"><img src="https://img.shields.io/website?url=https%3A%2F%2Fdeepfence.github.io%2FPacketStreamer%2F" alt="Book" /></a>
+                        <p><a href="https://docs.deepfence.io/packetstreamer"><img src="https://img.shields.io/badge/documentation-read-green" alt="Documentation" /></a>
 <a href="https://github.com/deepfence/PacketStreamer/blob/master/LICENSE"><img src="https://img.shields.io/github/license/deepfence/PacketStreamer" alt="GitHub license" /></a>
 <a href="https://github.com/deepfence/PacketStreamer/stargazers"><img src="https://img.shields.io/github/stars/deepfence/PacketStreamer" alt="GitHub stars" /></a>
 <a href="https://github.com/deepfence/PacketStreamer/issues"><img src="https://img.shields.io/github/issues/deepfence/PacketStreamer" alt="GitHub issues" /></a>
-<a href="https://join.slack.com/t/deepfence-community/shared_invite/zt-podmzle9-5X%7EqYx8wMaLt9bGWwkSdgQ"><img src="https://img.shields.io/badge/slack-@deepfence-blue.svg?logo=slack" alt="Slack" /></a></p>
+<a href="https://join.slack.com/t/deepfence-community/shared_invite/zt-podmzle9-5X~qYx8wMaLt9bGWwkSdgQ"><img src="https://img.shields.io/badge/slack-@deepfence-blue.svg?logo=slack" alt="Slack" /></a></p>
 <h1 id="packetstreamer"><a class="header" href="#packetstreamer">PacketStreamer</a></h1>
 <p>Deepfence PacketStreamer is a high-performance remote packet capture and
 collection tool. It is used by Deepfence's <a href="https://deepfence.io/threatstryker/">ThreatStryker</a>
@@ -156,8 +156,8 @@ workloads for forensic analysis.</p>
 <p>Primary design goals:</p>
 <ul>
 <li>Stay light, capture and stream, no additional processing</li>
-<li>Portability, works across virtual machines, Kubernetes and AWS Fargate. Linux
-and Windows.</li>
+<li>Portability, works across <strong>virtual machines, Kubernetes and AWS Fargate</strong>. Linux
+and Windows</li>
 </ul>
 <p>PacketStreamer <strong>sensors</strong> are started on the target servers. Sensors capture
 traffic, apply filters, and then stream the traffic to a central reciever.
@@ -176,13 +176,28 @@ pcap file or live feed the traffic to the tooling of your choice, such as
 <code>Zeek</code>, <code>Wireshark</code> <code>Suricata</code>, or as a live stream for Machine Learning models.</p>
 <h2 id="when-to-use-packetstreamer"><a class="header" href="#when-to-use-packetstreamer">When to use PacketStreamer</a></h2>
 <p>PacketStreamer meets more general use cases than existing alternatives. For
-example, <a href="https://github.com/elastic/beats/tree/master/packetbeat">PacketBeat</a>
-captures and parses the packets on multiple remote hosts, assembles
-transactions, and ships the processed data to a central ElasticSearch
-collector. <a href="https://github.com/eldadru/ksniff">ksniff</a> captures raw packet
-data from a single Kubernetes pod.</p>
-<p>Use PacketStreamer if you need a lightweight, efficient method to collect raw
+example , Use PacketStreamer if you need a lightweight, efficient method to collect raw
 network data from multiple machines for central logging and analysis.</p>
+<h2 id="quick-start"><a class="header" href="#quick-start">Quick Start</a></h2>
+<p><img src="docs/docs/packetstreamer/img/packetstreamer.svg" alt="PacketStreamer QuickStart" /></p>
+<p>For full instructions, refer to the <a href="https://docs.deepfence.io/packetstreamer/">PacketStreamer Documentation</a>.</p>
+<p>You will need to install the golang toolchain and <code>libpcap-dev</code> before building PacketStreamer.</p>
+<pre><code class="language-shell script"># Pre-requisites (Ubuntu): sudo apt install golang-go libpcap-dev
+git clone https://github.com/deepfence/PacketStreamer.git
+cd PacketStreamer/
+make
+</code></pre>
+<p>Run a PacketStreamer receiver, listening on port <strong>8081</strong> and writing pcap output to <strong>/tmp/dump_file</strong> (see <a href="contrib/config/receiver.yaml">receiver.yaml</a>):</p>
+<pre><code class="language-shell script">./packetstreamer receiver --config ./contrib/config/receiver.yaml
+</code></pre>
+<p>Run one or more PacketStreamer sensors on local and remote hosts. Edit the <strong>server address</strong> in <a href="contrib/config/sensor-local.yaml">sensor.yaml</a>:</p>
+<pre><code class="language-shell script"># run on the target hosts to capture and forward traffic
+
+# copy and edit the sample sensor-local.yaml file, and add the address of the receiver host
+cp ./contrib/config/sensor-local.yaml ./contrib/config/sensor.yaml
+
+./packetstreamer sensor --config ./contrib/config/sensor.yaml
+</code></pre>
 <h2 id="who-uses-packetstreamer"><a class="header" href="#who-uses-packetstreamer">Who uses PacketStreamer?</a></h2>
 <ul>
 <li>Deepfence <a href="https://deepfence.io/threatstryker/">ThreatStryker</a> uses
@@ -192,14 +207,15 @@ and anomaly detection.</li>
 <h2 id="get-in-touch"><a class="header" href="#get-in-touch">Get in touch</a></h2>
 <p>Thank you for using PacketStreamer.</p>
 <ul>
-<li><a href="https://join.slack.com/t/deepfence-community/shared_invite/zt-podmzle9-5X%7EqYx8wMaLt9bGWwkSdgQ"><img src="https://img.shields.io/badge/slack-@deepfence-brightgreen.svg?logo=slack"></a> Got a question, need some help?  Find the Deepfence team on Slack</li>
-<li>https://github.com/deepfence/PacketStreamer/issues: Got a feature request or found a bug? Raise an issue</li>
+<li><a href="https://docs.deepfence.io/packetstreamer/"><img src="https://img.shields.io/badge/documentation-read-green"></a> Start with the documentation</li>
+<li><a href="https://join.slack.com/t/deepfence-community/shared_invite/zt-podmzle9-5X~qYx8wMaLt9bGWwkSdgQ"><img src="https://img.shields.io/badge/slack-@deepfence-blue.svg?logo=slack"></a> Got a question, need some help?  Find the Deepfence team on Slack</li>
+<li><a href="https://github.com/deepfence/PacketStreamer/issues"><img src="https://img.shields.io/github/issues/deepfence/PacketStreamer" alt="GitHub issues" /></a> Got a feature request or found a bug? Raise an issue</li>
 <li><a href="SECURITY.html">productsecurity <em>at</em> deepfence <em>dot</em> io</a>: Found a security issue? Share it in confidence</li>
 <li>Find out more at <a href="https://deepfence.io/">deepfence.io</a></li>
 </ul>
 <h2 id="security-and-support"><a class="header" href="#security-and-support">Security and Support</a></h2>
 <p>For any security-related issues in the PacketStreamer project, contact <a href="SECURITY.html">productsecurity <em>at</em> deepfence <em>dot</em> io</a>.</p>
-<p>Please file GitHub issues as needed, and join the Deepfence Community <a href="https://join.slack.com/t/deepfence-community/shared_invite/zt-podmzle9-5X%7EqYx8wMaLt9bGWwkSdgQ">Slack channel</a>.</p>
+<p>Please file GitHub issues as needed, and join the Deepfence Community <a href="https://join.slack.com/t/deepfence-community/shared_invite/zt-podmzle9-5X~qYx8wMaLt9bGWwkSdgQ">Slack channel</a>.</p>
 <h2 id="license"><a class="header" href="#license">License</a></h2>
 <p>The Deepfence PacketStreamer project (this repository) is offered under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache2 license</a>.</p>
 <p><a href="CONTRIBUTING.html">Contributions</a> to Deepfence PacketStreamer project are similarly accepted under the Apache2 license, as per <a href="https://docs.github.com/en/github/site-policy/github-terms-of-service#6-contributions-under-repository-license">GitHub's inbound=outbound policy</a>.</p>
@@ -330,6 +346,81 @@ sudo ./packetstreamer --config ./contrib/config/sensor-vagrant.yaml
 <p>Generate some live traffic</p>
 <pre><code class="language-bash">echo 'GET http://some_ip:80' | vegeta attack -rate 100 -duration 5m | tee results.bin | vegeta report
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="plugins"><a class="header" href="#plugins">Plugins</a></h1>
+<p>This documentation section is about plugins which allow to stream packets to
+various external storage services.</p>
+<p>Plugins can be used both from:</p>
+<ul>
+<li><strong>sensor</strong> - in that case, locally captured packets are streamed through the
+plugin</li>
+<li><strong>receiver</strong> - all packets retrieved from (potentially multiple) sensors are
+streamed through the plugin</li>
+</ul>
+<p>Currently the plugins are:</p>
+<ul>
+<li><a href="plugins/./s3.html">S3</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="s3"><a class="header" href="#s3">S3</a></h1>
+<p>The S3 plugins allows to stream packets to the given S3 buckets.</p>
+<h2 id="configuration"><a class="header" href="#configuration">Configuration</a></h2>
+<h3 id="aws-credentials"><a class="header" href="#aws-credentials">AWS credentials</a></h3>
+<p>Before running PacketStreamer, AWS credentials need to be configured by one of
+the following ways:</p>
+<ul>
+<li><code>AWS_ACCESS_KEY_ID</code> and <code>AWS_SECRET_ACCESS_KEY</code> environment variables</li>
+<li><code>~/.aws/config</code> file - it can be created by <code>aws configure</code></li>
+</ul>
+<p>The first way might be more convenient when running as root (required when
+running a sensor).</p>
+<h3 id="configuration-scheme"><a class="header" href="#configuration-scheme">Configuration scheme</a></h3>
+<p>S3 plugin configuration has the following syntax:</p>
+<pre><code class="language-yaml">output:
+  plugins:                         # optional
+    s3:
+      bucket: _string_
+      region: _string_
+      totalFileSize: _file_size_   # optional; default: 10 MB
+      uploadChunkSize: _file_size_ # optional; default: 5 MB
+      uploadTimeout: _timeout_     # optional; default: 1m
+      cannedACL: _acl_             # optional; default: Bucket owner enforced
+</code></pre>
+<h3 id="sensor-configuration"><a class="header" href="#sensor-configuration">Sensor configuration</a></h3>
+<p>If you want to stream locally captured packets from sensor to S3, you can use
+the following example configuration from
+<a href="https://raw.githubusercontent.com/deepfence/PacketStreamer/main/contrib/config/sensor-s3.yaml">contrib/config/sensor-s3.yaml</a>:</p>
+<pre><code class="language-yaml">output:
+  plugins:
+    s3:
+      region: eu-west-1
+      bucket: foo-pcap
+      totalFileSize: 10MB
+      uploadChunkSize: 5MB
+      uploadTimeout: 1m
+      cannedACL: bucket-owner-full-control
+pcapMode: all
+</code></pre>
+<p>And run PacketStreamer with it:</p>
+<pre><code class="language-bash">sudo packetstreamer sensor --config ./contrib/config/sensor-s3.yaml
+</code></pre>
+<h3 id="receiver-configuration"><a class="header" href="#receiver-configuration">Receiver configuration</a></h3>
+<p>If you want to stream packets from receiver to S3, you can use the following
+example configuration from
+[contrib/config/receiver-s3.yaml]</p>
+<pre><code class="language-yaml">input:
+  address: 0.0.0.0
+  port: 8081
+output:
+  plugins:
+    s3:
+      region: eu-west-1
+      bucket: foo-pcap
+      totalFileSize: 10MB
+      uploadChunkSize: 5MB
+      uploadTimeout: 1m
+      cannedACL: bucket-owner-full-control
+</code></pre>
+<pre><code class="language-bash">packetstreamer receiver --config ./contrib/config/receiver-s3.yaml
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="using-with-other-tools"><a class="header" href="#using-with-other-tools">Using with other tools</a></h1>
 <ul>
 <li><a href="tools/./suricata.html">Suricata</a></li>
@@ -359,31 +450,39 @@ output:
 Suricata:</p>
 <pre><code class="language-bash">./packet-streamer receiver --config ./contrib/config/receiver-stdout.yaml | suricata -v -c /etc/suricata/suricata.yaml -r /dev/stdin
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="configuration"><a class="header" href="#configuration">Configuration</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="configuration-1"><a class="header" href="#configuration-1">Configuration</a></h1>
 <p><code>packetstreamer</code> is configured using a yaml-formatted configuration file.</p>
-<pre><code class="language-yaml">input:                         # required in 'receiver' mode
+<pre><code class="language-yaml">input:                             # required in 'receiver' mode
   address: _ip-address_
   port: _listen-port_
 output:
-  server:                      # required in 'sensor' mode
+  server:                          # required in 'sensor' mode
     address: _ip-address_
     port: _listen-port_
-  file:                        # required in 'receiver' mode
-    path: _filename_|stdout    # 'stdout' is a reserved name. Receiver will write to stdout
-tls:                           # optional
+  file:                            # required in 'receiver' mode
+    path: _filename_|stdout        # 'stdout' is a reserved name. Receiver will write to stdout
+  plugins:                         # optional
+    s3:
+      bucket: _string_
+      region: _string_
+      totalFileSize: _file_size_   # optional; default: 10 MB
+      uploadChunkSize: _file_size_ # optional; default: 5 MB
+      uploadTimeout: _timeout_     # optional; default: 1m
+      cannedACL: _acl_             # optional; default: Bucket owner enforced
+tls:                               # optional
   enable: _true_|_false_
   certfile: _filename_
   keyfile: _filename_
-auth:                          # optional; receiver and sensor must use same shared key
+auth:                              # optional; receiver and sensor must use same shared key
   enable: _true_|_false_
   key: _string_
-compressBlockSize: _integer_   # optional; default: 65
-inputPacketLen: _integer_      # optional; default: 65535
-logFilename: _filename_        # optional
-pcapMode: _Allow_|_Deny_|_All_ # optional
-capturePorts: _list-of-ports_  # optional
+compressBlockSize: _integer_       # optional; default: 65
+inputPacketLen: _integer_          # optional; default: 65535
+logFilename: _filename_            # optional
+pcapMode: _Allow_|_Deny_|_All_     # optional
+capturePorts: _list-of-ports_      # optional
 captureInterfacesPorts: _map: interface-name:port_ # optional
-ignorePorts: _list-of-ports_   # optional
+ignorePorts: _list-of-ports_       # optional
 </code></pre>
 <p>You can find example configuration files in the <a href="https://github.com/deepfence/PacketStreamer/tree/main/contrib/config"><code>/contrib/config/</code></a>
 folder.</p>
